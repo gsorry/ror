@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
+
+# Delayed::Job (or DJ) encapsulates the common pattern of asynchronously executing longer tasks in the background.
+gem 'delayed_job_active_record'
