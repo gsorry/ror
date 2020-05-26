@@ -18,6 +18,10 @@
       <th align="right">Last Name</th>
       <td><%= @user.last_name %></td>
     </tr>
+    <tr>
+      <th align="right">Image</th>
+      <td><img src="<%= url_for(@user.image) %>" width="200" /><br></td>
+    </tr>
   </tbody>
 </table>
 

@@ -219,6 +219,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  delayed_job
   delayed_job_active_record
   devise
   jbuilder (~> 2.7)

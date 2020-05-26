@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      # @user.image.attach(params[:user][:image])
       redirect_to @user
     else
       render 'edit'
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:email, :password, :first_name, :last_name)
+      params.require(:user).permit(:email, :password, :first_name, :last_name, :image)
     end
 
 end

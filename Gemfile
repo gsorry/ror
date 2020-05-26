@@ -57,4 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 # Delayed::Job (or DJ) encapsulates the common pattern of asynchronously executing longer tasks in the background.
+gem 'delayed_job'
 gem 'delayed_job_active_record'
