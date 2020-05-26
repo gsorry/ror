@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @users = User.all
   end
@@ -18,7 +20,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.display_name = first_last_name
     if @user.save
       redirect_to @user
     else
@@ -28,7 +29,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.display_name = first_last_name
     if @user.update(user_params)
       redirect_to @user
     else
@@ -46,10 +46,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:email, :password, :first_name, :last_name)
-    end
-
-    def first_last_name
-      @user.first_name + ' ' + @user.last_name
     end
 
 end
