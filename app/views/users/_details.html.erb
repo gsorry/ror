@@ -1,0 +1,24 @@
+<table>
+  <tbody>
+  <tr>
+    <th align="right">ID</th>
+    <td><%= user.id %></td>
+  </tr>
+  <tr>
+    <th align="right">Email</th>
+    <td><%= user.email %></td>
+  </tr>
+  <tr>
+    <th align="right">First Name</th>
+    <td><%= user.first_name %></td>
+  </tr>
+  <tr>
+    <th align="right">Last Name</th>
+    <td><%= user.last_name %></td>
+  </tr>
+  <tr>
+    <th align="right">Image</th>
+    <td><%= image_tag user.image.variant(resize_to_limit: [200, 200]) if user.image.attached? %><br></td>
+  </tr>
+  </tbody>
+</table>

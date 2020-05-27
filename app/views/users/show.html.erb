@@ -1,29 +1,6 @@
 <h1>Show User "<%= @user.display_name %>"</h1>
 
-<table>
-  <tbody>
-    <tr>
-      <th align="right">ID</th>
-      <td><%= @user.id %></td>
-    </tr>
-    <tr>
-      <th align="right">Email</th>
-      <td><%= @user.email %></td>
-    </tr>
-    <tr>
-      <th align="right">First Name</th>
-      <td><%= @user.first_name %></td>
-    </tr>
-    <tr>
-      <th align="right">Last Name</th>
-      <td><%= @user.last_name %></td>
-    </tr>
-    <tr>
-      <th align="right">Image</th>
-      <td><img src="<%= url_for(@user.image) %>" width="200" /><br></td>
-    </tr>
-  </tbody>
-</table>
+<%= render 'details', user: @user %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
