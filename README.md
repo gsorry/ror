@@ -9,9 +9,12 @@ This describe all steps necessary to get the application up and running.
 
 ## System dependencies
 
-- sqlite3
-- imagemagick
-- redis
+- Ruby
+- SQLite3
+- Node.js
+- Yarn
+- ImageMagick
+- Redis
 
 ## Download
 
@@ -19,6 +22,12 @@ Download and unpack [zip archive](https://github.com/gsorry/ror/archive/master.z
 or clone repository:
 ```
 git clone https://github.com/gsorry/ror.git
+```
+
+Then install dependencies:
+```
+bundle install
+yarn install -check-files
 ```
 
 ## Configuration
@@ -68,5 +77,9 @@ To run application in development environment just start built in server:
 ```
 rails server
 ```
+
+One user is created in database initialization step. It can be used to login for a first time:
+- email: `admin@test.com`
+- password: `admin01` 
 
 **IMPORTANT:** Configuration for production environment is not configured!
