@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   get 'profile/index'
   get 'profile/edit'
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  resources :users,
+            only: [:edit, :update, :delete],
+            controller: 'users',
+            as: :user_registration do
+              get 'cancel'
+            end
+
+  devise_for :users, skip: [:registrations]
 
   resources :users
 

@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :recoverable, :rememberable, :validatable
   # validates :email, presence: true, length: { minimum: 3 }
   # validates :password, presence: true, length: { minimum: 8, maximum: 16 }
 
@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
     def notify_user_deleted
       # Tell the UserMailer to send a welcome email after save
-      UserMailer.with(user: self).delay.notify_user_deleted.deliver_later
+      UserMailer.delay.notify_user_deleted(self)
     end
 
 end

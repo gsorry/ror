@@ -6,8 +6,13 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+- ruby 2.7.1
+- rails 6.0.3.1
 
 * System dependencies
+- sqlite3
+- imagemagick
+- redis
 
 * Configuration
 
@@ -18,6 +23,9 @@ Things you may want to cover:
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
+```
+rake jobs:work
+```
 
 * Deployment instructions
 
