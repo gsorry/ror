@@ -1,17 +1,20 @@
 class User < ApplicationRecord
+  # Generic user
 
+  # Notify about deleted user by sending email
   after_destroy :notify_user_deleted
+
+  # concatenation of first_name and last_name, separated by a space, every time the users firstname or lastname changes.
   after_validation :update_display_name
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # Include selected devise modules.
   devise :database_authenticatable, :recoverable, :rememberable, :validatable
-  # validates :email, presence: true, length: { minimum: 3 }
-  # validates :password, presence: true, length: { minimum: 8, maximum: 16 }
 
+  # First name and last name validatons
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  # Profile image
   has_one_attached :image
 
   private

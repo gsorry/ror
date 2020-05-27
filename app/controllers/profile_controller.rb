@@ -1,4 +1,5 @@
 class ProfileController < ApplicationController
+  # Profile controller - Demonstrate how the session works
 
   before_action :authenticate_user!
 

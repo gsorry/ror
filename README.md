@@ -1,32 +1,63 @@
 # Ruby On Rails Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This describe all steps necessary to get the application up and running.
 
-Things you may want to cover:
+## Ruby version
 
-* Ruby version
 - ruby 2.7.1
 - rails 6.0.3.1
 
-* System dependencies
+## System dependencies
+
 - sqlite3
 - imagemagick
 - redis
 
-* Configuration
+## Configuration
 
-* Database creation
+Edit `config/environments/development.rb` and change redis servers if needed:
+```
+cache_servers = %w(redis://localhost:6308/0)
+```
 
-* Database initialization
+Toggle cache on/off for development environment: 
+```
+rails dev:cache
+```
 
-* How to run the test suite
+Edit `app/mailers/application_mailer.rb` and `config/initializers/devise.rb` and change default from and sender email address:
+TODO: Put this address to environment variable and change config files!
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database creation
+
+Run migrations:
+```
+rails db:migrate
+```
+
+## Database initialization
+
+Run seeder:
+```
+rake db:seed
+```
+
+## How to run the test suite
+
+TODO: Cover everithing with tests!
+
+## Services (job queues, cache servers, search engines, etc.)
+
+Run delayed jobs:
 ```
 rake jobs:work
 ```
 
-* Deployment instructions
+## Deployment instructions
 
-* ...
+To run application in development environment just start built in server:
+```
+rails server
+```
+
+IMPORTANT: Configuration for production environment is not configured!

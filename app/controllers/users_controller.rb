@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # Users Controller - Create, edit and delete generic users.
 
   before_action :authenticate_user!
 
