@@ -1,2 +1,2 @@
 # EmailDeliveryObserver to log email messages
-ActionMailer::Base.register_observer(EmailDeliveryObserver)
+# ActionMailer::Base.register_observer(EmailDeliveryObserver)

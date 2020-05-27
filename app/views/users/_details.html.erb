@@ -1,24 +1,7 @@
-<table>
-  <tbody>
-  <tr>
-    <th align="right">ID</th>
-    <td><%= user.id %></td>
-  </tr>
-  <tr>
-    <th align="right">Email</th>
-    <td><%= user.email %></td>
-  </tr>
-  <tr>
-    <th align="right">First Name</th>
-    <td><%= user.first_name %></td>
-  </tr>
-  <tr>
-    <th align="right">Last Name</th>
-    <td><%= user.last_name %></td>
-  </tr>
-  <tr>
-    <th align="right">Image</th>
-    <td><%= image_tag user.image.variant(resize_to_limit: [200, 200]) if user.image.attached? %><br></td>
-  </tr>
-  </tbody>
-</table>
+<div class="card" style="width: 400px;">
+  <%= image_tag user.image.variant(resize_to_limit: [400, 400]) if user.image.attached? %>
+  <div class="card-body">
+    <h5 class="card-title">#<%= user.id %> <%= user.display_name %></h5>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <tr>
   <td><%= user.id %></td>
-  <td><%= image_tag user.image.variant(resize_to_limit: [50, 50]) if user.image.attached? %></td>
+  <td><%= image_tag user.image.variant(resize_to_limit: [50, 50]), class: 'figure-img img-fluid rounded' if user.image.attached? %></td>
   <td><%= user.email %></td>
   <td><%= user.first_name %></td>
   <td><%= user.last_name %></td>

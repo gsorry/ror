@@ -1,6 +1,8 @@
-<h1>Edit User "<%= @user.display_name %>"</h1>
+<h1 class="mt-5">Edit User "<%= @user.display_name %>"</h1>
+
+<nav class="nav">
+  <%= link_to 'Back', users_path, class: 'nav-link' %>
+  <%= link_to 'Show', user_path(@user), class: 'nav-link' %>
+</nav>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', user_path(@user) %> |
-<%= link_to 'Back', users_path %>

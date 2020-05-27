@@ -1,32 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="h-100">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Ror</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <ul>
-      <li><%= link_to 'Welcome', welcome_index_path %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'Profile', profile_index_path %></li>
-        <li><%= link_to 'Users', users_path %></li>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to 'Log In', new_user_session_path %></li>
-      <% end %>
-    </ul>
-
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-
-    <%= yield %>
+  <body class="d-flex flex-column h-100">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Ruby On Rails</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to 'Welcome', welcome_index_path, class: 'nav-link' %>
+            </li>
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Profile', profile_index_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Users', users_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'Log In', new_user_session_path, class: 'nav-link' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-0">
+      <div class="container">
+        <% if notice %>
+          <div class="alert alert-info mt-5" role="alert"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-danger mt-5" role="alert"><%= alert %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="text-muted">Ruby On Rails.</span>
+      </div>
+    </footer>
   </body>
 </html>
