@@ -13,6 +13,14 @@ This describe all steps necessary to get the application up and running.
 - imagemagick
 - redis
 
+## Download
+
+Download and unpack [zip archive](https://github.com/gsorry/ror/archive/master.zip)
+or clone repository:
+```
+git clone https://github.com/gsorry/ror.git
+```
+
 ## Configuration
 
 Edit `config/environments/development.rb` and change redis servers if needed:
@@ -26,7 +34,8 @@ rails dev:cache
 ```
 
 Edit `app/mailers/application_mailer.rb` and `config/initializers/devise.rb` and change default from and sender email address:
-TODO: Put this address to environment variable and change config files!
+
+**TODO:** Put this address to environment variable and change config files!
 
 ## Database creation
 
@@ -44,7 +53,7 @@ rake db:seed
 
 ## How to run the test suite
 
-TODO: Cover everithing with tests!
+**TODO:** Cover everithing with tests!
 
 ## Services (job queues, cache servers, search engines, etc.)
 
@@ -60,4 +69,4 @@ To run application in development environment just start built in server:
 rails server
 ```
 
-IMPORTANT: Configuration for production environment is not configured!
+**IMPORTANT:** Configuration for production environment is not configured!
